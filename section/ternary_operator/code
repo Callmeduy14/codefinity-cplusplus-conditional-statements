@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+
+std::string evaluatePerformance(int score1, int score2, int score3)
+{
+    double average = (score1 + score2 + score3) / 3.0;
+
+    std::string category = "Fail";
+
+    category = (average >= 50) ? "Average"   : category;
+    category = (average >= 70) ? "Good"      : category;
+    category = (average >= 85) ? "Excellent" : category;
+
+    return category;
+}
+
+int main()
+{
+    int test1 = 70;
+    int test2 = 80;
+    int test3 = 30;
+
+    double average = (test1 + test2 + test3) / 3.0;
+    std::string performance = evaluatePerformance(test1, test2, test3);
+
+    std::cout << "Average score: " << average
+              << " - Performance: " << performance << std::endl;
+
+    return 0;
+}
